@@ -6,65 +6,20 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    class Player : IPlayer
+    class Player : CombatCapable, IPlayer
     {
-        private int attack;
-        private int health;
-        private int defense;
-        private int speed;
+        private Location currentLocation;
 
-        public int Attack
+        public Location CurrentLocation
         {
             get
             {
-                return attack;
+                return currentLocation;
             }
             set
             {
-                attack = value;
+                currentLocation = value;
             }
         }
-        public int Health
-        {
-            get
-            {
-                return health;
-            }
-            set
-            {
-                health = value;
-            }
-        }
-        public int Defense
-        {
-            get
-            {
-                return defense;
-            }
-            set
-            {
-                defense = value;
-            }
-        }
-        public int Speed
-        {
-            get
-            {
-                return speed;
-            }
-            set
-            {
-                speed = value;
-            }
-        }
-
-        public void setStats(int newAttack, int newHealth, int newDefense, int newSpeed)
-        {
-            this.Attack = newAttack;
-            this.Health = newHealth;
-            this.Defense = newDefense;
-            this.Speed = newSpeed;
-        }
-
     }
 }

@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    interface IEnemy
+    interface IEnemyEncounter
     {
+        bool enemyEncountered();
+        IEnemyGroup getEnemyGroup();
     }
 }

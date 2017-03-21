@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    interface IEnemyGroup
+    interface IEnemy : ICombatCapable
     {
-
+        
     }
 }

@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    interface IPlayer : ICombatCapable
+    abstract class Location
     {
-        Location CurrentLocation { get; set; }
+
     }
 }

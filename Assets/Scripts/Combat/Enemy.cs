@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    class Enemy
+    class Enemy : CombatCapable, IEnemy
     {
+        private String enemyType;
     }
 }
