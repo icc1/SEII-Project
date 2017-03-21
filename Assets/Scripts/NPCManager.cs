@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestingScriptDeletePlz : MonoBehaviour {
+public class NPCManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
