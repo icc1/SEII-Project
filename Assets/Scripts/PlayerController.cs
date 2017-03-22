@@ -7,29 +7,52 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
 
+
+    private bool playerMoving;
     private Animator animate;
+    private Rigidbody2D playerRigidBody;
+    private Vector2 lastMove;
 
 	// Use this for initialization
 	void Start ()
     {
         animate = GetComponent<Animator>();
-		
+        playerRigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        playerMoving = false;
 
         if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
         {
-            transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
+            playerRigidBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, playerRigidBody.velocity.y);
+            playerMoving = true;
+            lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
         }
-        else if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5)
+        if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5)
         {
-            transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
+            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x,Input.GetAxisRaw("Vertical") * moveSpeed);
+            playerMoving = true;
+            lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
         }
+
+        if(Input.GetAxisRaw("Horizontal") < 0.5f && Input.GetAxisRaw("Horizontal") > -0.5f)
+        {
+            playerRigidBody.velocity = new Vector2(0f, playerRigidBody.velocity.y);
+        }
+        if(Input.GetAxisRaw("Vertical") < 0.5f && Input.GetAxisRaw("Vertical") > -0.5f)
+        {
+            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, 0f);
+        }
+
         animate.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         animate.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        animate.SetBool("PlayerMoving", playerMoving);
+        animate.SetFloat("LastMoveX", lastMove.x);
+        animate.SetFloat("LastMoveY", lastMove.y);
 
+  
     }
 }
