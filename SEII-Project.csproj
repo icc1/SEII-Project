@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.2f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -81,11 +83,17 @@
     <Compile Include="Assets\Scripts\IEnemy.cs" />
     <Compile Include="Assets\Scripts\IEnemyEncounter.cs" />
     <Compile Include="Assets\Scripts\IEnemyGroup.cs" />
+    <Compile Include="Assets\Scripts\IKeyNPC.cs" />
     <Compile Include="Assets\Scripts\INPC.cs" />
+    <Compile Include="Assets\Scripts\IPartyMemberNPC.cs" />
     <Compile Include="Assets\Scripts\IPlayer.cs" />
+    <Compile Include="Assets\Scripts\KeyNPC.cs" />
     <Compile Include="Assets\Scripts\NPCManager.cs" />
+    <Compile Include="Assets\Scripts\PartyMemberController.cs" />
+    <Compile Include="Assets\Scripts\PartyMemberNPC.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GenericNPC.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

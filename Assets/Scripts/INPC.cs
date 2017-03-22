@@ -6,7 +6,6 @@ namespace Assets.Scripts
 {
     interface INPC
     {
-        void setStats();
-        void setLocation();
+        void setStats(int newAttack, int newHealth, int newDefense, int newSpeed);
     }
 }
