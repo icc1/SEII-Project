@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\IEnemy.cs" />
     <Compile Include="Assets\Scripts\IEnemyEncounter.cs" />
     <Compile Include="Assets\Scripts\IEnemyGroup.cs" />
+    <Compile Include="Assets\Scripts\INPC.cs" />
     <Compile Include="Assets\Scripts\IPlayer.cs" />
     <Compile Include="Assets\Scripts\NPCManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
