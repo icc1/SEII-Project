@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts 
 {
-    class Player : CombatCapable, IPlayer
+    class Player : Stats, IPlayer
     {
         Location.Type currentLocation;
 

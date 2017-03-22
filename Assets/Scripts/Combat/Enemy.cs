@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    class Enemy : CombatCapable, IEnemy
+    class Enemy : Stats, IEnemy
     {
         private int enemyID;
         private int enemyRarity;
