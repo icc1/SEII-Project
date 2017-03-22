@@ -7,6 +7,6 @@ namespace Assets.Scripts
 {
     interface IPlayer : ICombatCapable
     {
-        Location CurrentLocation { get; set; }
+        Location.Type CurrentLocation { get; set; }
     }
 }

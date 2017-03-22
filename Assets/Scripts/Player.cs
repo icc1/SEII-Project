@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts 
 {
     class Player : CombatCapable, IPlayer
     {
-        private Location currentLocation;
+        Location.Type currentLocation;
 
-        public Location CurrentLocation
+        public Location.Type CurrentLocation
         {
             get
             {

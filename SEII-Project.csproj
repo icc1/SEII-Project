@@ -77,20 +77,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Combat\CombatCapable.cs" />
-    <Compile Include="Assets\Scripts\Combat\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Combat\EnemyEncounter.cs" />
-    <Compile Include="Assets\Scripts\Combat\EnemyGroup.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\ICombatCapable.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemeyInfo.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemy.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyEncounter.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat\CombatCapable.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\Combat\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyEncounter.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyGroup.cs" />
     <Compile Include="Assets\Scripts\IPlayer.cs" />
-    <Compile Include="Assets\Scripts\Locations\Dungeon.cs" />
-    <Compile Include="Assets\Scripts\Locations\Dungeon1.cs" />
-    <Compile Include="Assets\Scripts\Locations\Dungeon2.cs" />
-    <Compile Include="Assets\Scripts\Locations\Location.cs" />
-    <Compile Include="Assets\Scripts\Locations\Town.cs" />
+    <Compile Include="Assets\Scripts\Location\Location.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\TestingScriptDeletePlz.cs" />
