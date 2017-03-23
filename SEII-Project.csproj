@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemy.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyEncounter.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat\Combat.cs" />
     <Compile Include="Assets\Scripts\Combat\Stats.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Combat\Enemy.cs" />

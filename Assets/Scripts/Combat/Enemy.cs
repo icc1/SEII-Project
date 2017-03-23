@@ -6,10 +6,11 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    class Enemy : Stats, IEnemy
+    class EnemyNPC : Stats, IEnemyNPC
     {
         private int enemyID;
         private int enemyRarity;
         private Location.Type spawnLocation;
+        private String spriteName;
     }
 }

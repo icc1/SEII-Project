@@ -8,7 +8,7 @@ namespace Assets.Scripts.Combat.Enemies
 {
     class EnemyInfo : MonoBehaviour
     {
-        public IEnemy findEnemy(int spawnRoll, Location.Type dungeon)
+        public IEnemyNPC findEnemy(int spawnRoll, Location.Type dungeon)
         {
 
         }
@@ -22,7 +22,7 @@ namespace Assets.Scripts.Combat.Enemies
 
         void Start()
         {
-            
+            populateList();
         } 
     }
 }

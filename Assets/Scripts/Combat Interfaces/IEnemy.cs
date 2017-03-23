@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    interface IEnemy : ICombatCapable
+    interface IEnemyNPC : ICombatCapable
     {
         
     }

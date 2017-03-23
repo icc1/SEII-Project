@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
-    abstract class Stats
+    abstract class Stats : GameObject
     {
         private int attack;
         private int health;

@@ -7,7 +7,7 @@ namespace Assets.Scripts
 {
     interface IEnemyGroup
     {
-        IEnemy getEnemy(int enemyNo);
-        void addEnemy(IEnemy newEnemy);
+        IEnemyNPC getEnemy(int enemyNo);
+        void addEnemy(IEnemyNPC newEnemy);
     }
 }

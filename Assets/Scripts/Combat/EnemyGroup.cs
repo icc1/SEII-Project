@@ -7,14 +7,14 @@ namespace Assets.Scripts
 {
     class EnemyGroup : IEnemyGroup
     {
-        private LinkedList<IEnemy> enemies;
+        private LinkedList<IEnemyNPC> enemies;
 
-        public IEnemy getEnemy(int enemyNo)
+        public IEnemyNPC getEnemy(int enemyNo)
         {
             return enemies.ElementAt(enemyNo);
         }
 
-        public void addEnemy(IEnemy newEnemy)
+        public void addEnemy(IEnemyNPC newEnemy)
         {
             enemies.AddLast(newEnemy);
         }

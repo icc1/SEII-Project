@@ -16,10 +16,6 @@ class EnemyEncounter {
         else
             return false;
     }
-    public IEnemyGroup getEnemyGroup(IPlayer playerCharacter)
-    {
-        return generateEnemyGroup(playerCharacter.CurrentLocation);
-    }
     private IEnemyGroup generateEnemyGroup(Location.Type playerLocation)
     {
         IEnemyGroup newGroup = new EnemyGroup();
@@ -38,7 +34,7 @@ class EnemyEncounter {
             return null;
         }
     }
-    private IEnemy generateEnemy(Location.Type playerLocation)
+    private IEnemyNPC generateEnemy(Location.Type playerLocation)
     {
         int enemySelector = encounterRand.Next(0, 100);
         if (playerLocation == Location.Type.DUNGEON1)
