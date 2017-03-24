@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
-    abstract class Stats : IStats
+    abstract class Stats : MonoBehaviour, IStats
     {
         private int attack;
         private int health;

@@ -1,0 +1,20 @@
+<Enemy>
+	<enemyID>10</enemyID>
+	<enemyName>Slime</enemyName>
+	<enemySprite>slime</enemySprite>
+	<enemySpawnLocation>1</enemySpawnLocation>
+	<enemyAttack>2</enemyAttack>
+	<enemyHealth>3</enemyHealth>
+	<enemyDefense>0</enemyDefense>
+	<enemySpeed>5</enemySpeed>
+</Enemy>
+<Enemy>
+	<enemyID>11</enemyID>
+	<enemyName>Skeleton</enemyName>
+	<enemySprite>skeleton</enemySprite>
+	<enemySpawnLocation>1</enemySpawnLocation>
+	<enemyAttack>3</enemyAttack>
+	<enemyHealth>1</enemyHealth>
+	<enemyDefense>0</enemyDefense>
+	<enemySpeed>5</enemySpeed>
+</Enemy>

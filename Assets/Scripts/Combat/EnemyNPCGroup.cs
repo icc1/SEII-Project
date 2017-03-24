@@ -6,9 +6,14 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    class EnemyGroup : IEnemyGroup
+    class EnemyNPCGroup : IEnemyNPCGroup
     {
         private LinkedList<IEnemyNPC> enemies;
+
+        public int getNumberOfEnemies()
+        {
+            return enemies.Count;
+        }
 
         public IEnemyNPC getEnemy(int enemyNo)
         {
