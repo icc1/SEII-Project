@@ -87,17 +87,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyEncounter.cs" />
-    <Compile Include="Assets\Scripts\IEnemy.cs" />
-    <Compile Include="Assets\Scripts\IEnemyEncounter.cs" />
-    <Compile Include="Assets\Scripts\IEnemyGroup.cs" />
-    <Compile Include="Assets\Scripts\IPlayer.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyEncounter.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyNPC.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyNPCGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IPlayer.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IStats.cs" />
+    <Compile Include="Assets\Scripts\Combat\Combat.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyEncounter.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyNPC.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyNPCGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat\Player.cs" />
+    <Compile Include="Assets\Scripts\Combat\Stats.cs" />
+    <Compile Include="Assets\Scripts\InfoManagers\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\Location\Location.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\TestingScriptDeletePlz.cs" />
+    <Compile Include="Assets\Scripts\SceneController.cs" />
+    <Compile Include="Assets\Scripts\WorkInProgress\SceneControllerScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
