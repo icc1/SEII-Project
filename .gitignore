@@ -218,3 +218,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+.vs/SEII-Project/v14/.suo
+SEII-Project.csproj
