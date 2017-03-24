@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Assets.Scripts.Combat_Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UnityEngine;
 
 namespace Assets.Scripts
 {
-    class Player : IPlayer
+    abstract class Stats : IStats
     {
         private int attack;
         private int health;
@@ -65,6 +65,5 @@ namespace Assets.Scripts
             this.Defense = newDefense;
             this.Speed = newSpeed;
         }
-
     }
 }
