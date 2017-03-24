@@ -77,19 +77,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemeyInfo.cs" />
-    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemy.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyNPC.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyEncounter.cs" />
-    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyNPCGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IStats.cs" />
     <Compile Include="Assets\Scripts\Combat\Combat.cs" />
     <Compile Include="Assets\Scripts\Combat\Stats.cs" />
-    <Compile Include="Assets\Scripts\Combat\EnemyInfo.cs" />
-    <Compile Include="Assets\Scripts\Combat\Enemy.cs" />
+    <Compile Include="Assets\Scripts\InfoManagers\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyNPC.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyEncounter.cs" />
-    <Compile Include="Assets\Scripts\Combat\EnemyGroup.cs" />
-    <Compile Include="Assets\Scripts\IPlayer.cs" />
+    <Compile Include="Assets\Scripts\Combat\EnemyNPCGroup.cs" />
+    <Compile Include="Assets\Scripts\Combat Interfaces\IPlayer.cs" />
     <Compile Include="Assets\Scripts\Location\Location.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Combat\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\TestingScriptDeletePlz.cs" />
   </ItemGroup>

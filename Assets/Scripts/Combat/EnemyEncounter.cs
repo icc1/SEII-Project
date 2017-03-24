@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using Assets.Scripts;
+using Assets.Scripts.Combat_Interfaces;
+using Assets.Scripts.InfoManagers;
 
 class EnemyEncounter {
     System.Random encounterRand = new System.Random();
     int chanceOfEncounter = 30;
+
+    int dungeon1BaseID = 10;
+    int dungeon1EnemyTypes = 2;
 
     public bool enemeyEncountered()
     {
@@ -36,10 +41,11 @@ class EnemyEncounter {
     }
     private IEnemyNPC generateEnemy(Location.Type playerLocation)
     {
-        int enemySelector = encounterRand.Next(0, 100);
+        int enemySelector; 
         if (playerLocation == Location.Type.DUNGEON1)
         {
-            return null;
+            enemySelector = encounterRand.Next(dungeon1BaseID, dungeon1EnemyTypes - 1);
+            return EnemyInfo.findEnemy(enemySelector);
         }
         else
         {

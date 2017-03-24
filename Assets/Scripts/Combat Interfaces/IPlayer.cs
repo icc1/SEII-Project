@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IEnemeyInfo
+    interface IPlayer : IStats
     {
-        
+        Location.Type CurrentLocation { get; set; }
     }
 }

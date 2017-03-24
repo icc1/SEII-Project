@@ -25,7 +25,19 @@ namespace Assets.Scripts.Combat
         }
         void Update()
         {
-
+            switch(currentState)
+            {
+                case (CombatStates.START):
+                    break;
+                case (CombatStates.PLAYER):
+                    break;
+                case (CombatStates.ENEMY):
+                    break;
+                case (CombatStates.WIN):
+                    break;
+                case (CombatStates.LOSE):
+                    break;
+            }
         }
     }
 }
