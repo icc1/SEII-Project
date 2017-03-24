@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Combat_Interfaces
 {
     interface IEnemyEncounter
     {
-        IEnemyGroup generateOpponents();
+        bool enemyEncountered();
+        IEnemyGroup getEnemyGroup();
     }
 }
