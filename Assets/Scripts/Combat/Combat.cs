@@ -27,7 +27,7 @@ namespace Assets.Scripts.Combat
         {
             currentState = CombatStates.START;
 
-            player = GameObject.FindGameObjectWithTag("player").GetComponent(typeof(Player)) as Player;
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(Player)) as Player;
             enemyGroup = EnemyInfo.generateEnemyGroup(player.CurrentLocation);
         }
         void Update()
