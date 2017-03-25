@@ -26,10 +26,10 @@ namespace Assets.Scripts.Combat
         void Start()
         {
             currentState = CombatStates.START;
-
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(Player)) as Player;
-            enemyGroup = EnemyInfo.generateEnemyGroup(player.CurrentLocation);
+            //player = (IPlayer)GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerStats)).getStats();
+            enemyGroup = EnemyInfo.generateEnemyGroup(Location.Type.DUNGEON1);
         }
+        
         void Update()
         {
             switch(currentState)
@@ -79,7 +79,7 @@ namespace Assets.Scripts.Combat
             int fastestEnemy = 0;
             int fastestTeammate = 0;
 
-            for(int i = 0; i < enemyGroup.getNumberOfEnemies(); i++)
+            for(int i = 0; i <= enemyGroup.getNumberOfEnemies(); i++)
             {
                 if(enemyGroup.getEnemy(i).Speed > fastestEnemy)
                 {

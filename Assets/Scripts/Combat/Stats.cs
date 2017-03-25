@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    abstract class Stats : MonoBehaviour, IStats
+    abstract class Stats : IStats
     {
         private int attack;
         private int health;

@@ -22,7 +22,7 @@ namespace Assets.Scripts.Combat
         }
         private void initializeCombat()
         {
-            SceneManager.LoadScene("Scenes/battle", LoadSceneMode.Additive);
+            //SceneManager.LoadScene("Scenes/battle", LoadSceneMode.Additive);
         }
     }
 }

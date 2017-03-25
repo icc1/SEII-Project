@@ -8,7 +8,7 @@ namespace Assets.Scripts
 {
     class EnemyNPCGroup : IEnemyNPCGroup
     {
-        private LinkedList<IEnemyNPC> enemies;
+        private LinkedList<IEnemyNPC> enemies = new LinkedList<IEnemyNPC>();
 
         public int getNumberOfEnemies()
         {
