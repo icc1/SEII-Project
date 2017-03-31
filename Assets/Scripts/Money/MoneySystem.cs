@@ -8,20 +8,21 @@ using System.Collections;
 public class MoneySystem : MonoBehaviour
 {
     //Number of coins held by the player. Will need to be saved
-    int coins;
+    static int coins;
+    static int maxCoins = 99;
 
 
     //Load the saved money on startup
     void Start()
     {
-        AddMoney(PlayerPrefs.GetInt("MoneySave", 0));
+        //Needs implementation
     }
 
 
     //Save the money, called by SaveGame
     void SaveCoins()
     {
-        AddMoney(PlayerPrefs.SetInt("MoneySave", coins));
+        //Needs writing
     }
 
 
@@ -49,8 +50,8 @@ public class MoneySystem : MonoBehaviour
     //Capped at 99
     public static void AddMoney(int amount)
     {
-        if (coins + amount > 99)
-            coins = 99;
+        if (coins + amount > maxCoins)
+            coins = maxCoins;
         else
             coins += amount;
     }

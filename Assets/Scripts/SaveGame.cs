@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Assets.Scripts.Money;
+
 
 public class SaveGame : MonoBehaviour {
 
@@ -12,7 +12,7 @@ public class SaveGame : MonoBehaviour {
 	{
 		PlayerPrefs.SetFloat ("x", Character.position.x);
 		PlayerPrefs.SetFloat ("y", Character.position.y);
-        MoneySystem.SaveCoins();
+        
 
 		if (quit) {
 			Time.timeScale = 1;
