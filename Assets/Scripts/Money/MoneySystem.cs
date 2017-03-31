@@ -7,35 +7,34 @@ using System.Collections;
 //Will be involved with several areas such as buying, selling, and rewards
 public class MoneySystem : MonoBehaviour
 {
-    //Local int variable to be manipulated and returned.
+    //Number of coins held by the player. Will need to be saved
     int coins;
 
-    //Gets the current coins from the player
-    public static int GetPlayerCoins()
+
+    //Load the saved money on startup
+    void Start()
     {
-        //Method needed
-        return PlayerCoins; //playercoins
+        AddMoney(PlayerPrefs.GetInt("MoneySave", 0));
     }
 
-    //Method to set player coins
-    //Needs to be done once the player class has the int variable
-    public void SetPlayerCoins(int coins)
+
+    //Save the money, called by SaveGame
+    void SaveCoins()
     {
-        player.coins = coins;
+        AddMoney(PlayerPrefs.SetInt("MoneySave", coins));
     }
+
 
     //Buying function
     public static bool BuyItem(int cost)
     {
-        coins = GetPlayerCoins();
-
         //If the palyer has enough to buy, return true and subtract from players coins
         if (coins - cost >= 0)
         {
             coins -= cost;
-            SetPlayerCoins(coins);
             return true;
         }
+
         //Return false if the player doesn't have enough coins.
         //Needs to produce an error messege to the player
         else
@@ -44,18 +43,15 @@ public class MoneySystem : MonoBehaviour
         }
     }
 
+
     //Increase the amount of the players money.
     //Can be done by selling items, or drops for beating monsters
     //Capped at 99
     public static void AddMoney(int amount)
     {
-        coins = GetPlayerCoins();
-
-        coins += amount;
-
-        if (coins > 99)
+        if (coins + amount > 99)
             coins = 99;
-
-        SetPlayerCoins(coins);
+        else
+            coins += amount;
     }
 }
