@@ -5,52 +5,24 @@ using UnityEngine;
 using Assets.Scripts;
 using Assets.Scripts.Combat_Interfaces;
 using Assets.Scripts.InfoManagers;
+using UnityEngine.SceneManagement;
 
-class EnemyEncounter {
-    System.Random encounterRand = new System.Random();
-    int chanceOfEncounter = 30;
-
-    int dungeon1BaseID = 10;
-    int dungeon1EnemyTypes = 2;
-
-    public bool enemeyEncountered()
+namespace Assets.Scripts.Combat
+{
+    class EnemyEncounter : IEnemyEncounter
     {
-        int encounter = encounterRand.Next(0, 100);
-        if (encounter <= chanceOfEncounter)
-            return true;
-        else
-            return false;
-    }
-    private IEnemyGroup generateEnemyGroup(Location.Type playerLocation)
-    {
-        IEnemyGroup newGroup = new EnemyGroup();
-
-        if(playerLocation > Location.Type.TOWN)
+        public EnemyEncounter()
         {
-            int numberOfEnemies = encounterRand.Next(1, Location.getMaxEnemies(playerLocation));
-            for(int i = 0; i < numberOfEnemies; i++)
-            {
-                newGroup.addEnemy(generateEnemy(playerLocation));
-            }
-            return newGroup;
+            System.Random encounterRand = new System.Random();
+            int chanceOfEncounter = 1;
+
+            int encounter = encounterRand.Next(0, 100);
+            if (encounter <= chanceOfEncounter)
+                initializeCombat();
         }
-        else
+        private void initializeCombat()
         {
-            return null;
+            //SceneManager.LoadScene("Scenes/battle", LoadSceneMode.Additive);
         }
     }
-    private IEnemyNPC generateEnemy(Location.Type playerLocation)
-    {
-        int enemySelector; 
-        if (playerLocation == Location.Type.DUNGEON1)
-        {
-            enemySelector = encounterRand.Next(dungeon1BaseID, dungeon1EnemyTypes - 1);
-            return EnemyInfo.findEnemy(enemySelector);
-        }
-        else
-        {
-            return null;
-        }
-    }
-
 }

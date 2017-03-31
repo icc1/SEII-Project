@@ -5,8 +5,9 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IEnemyGroup
+    interface IEnemyNPCGroup
     {
+        int getNumberOfEnemies();
         IEnemyNPC getEnemy(int enemyNo);
         void addEnemy(IEnemyNPC newEnemy);
     }
