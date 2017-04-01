@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Combat Interfaces\IEnemyNPCGroup.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IPlayer.cs" />
     <Compile Include="Assets\Scripts\Combat Interfaces\IStats.cs" />
+    <Compile Include="Assets\Scripts\Combat\Combat UI\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\Combat\Combat.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyEncounter.cs" />
     <Compile Include="Assets\Scripts\Combat\EnemyNPC.cs" />

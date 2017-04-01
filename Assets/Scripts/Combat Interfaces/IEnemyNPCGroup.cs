@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IEnemyNPCGroup
+    public interface IEnemyNPCGroup
     {
         int getNumberOfEnemies();
         IEnemyNPC getEnemy(int enemyNo);

@@ -11,6 +11,11 @@ namespace Assets.Scripts.Combat
     {
         Location.Type currentLocation;
 
+        public Player()
+        {
+            setStats(10, 10, 10, 10);
+        }
+
         public Location.Type CurrentLocation
         {
             get

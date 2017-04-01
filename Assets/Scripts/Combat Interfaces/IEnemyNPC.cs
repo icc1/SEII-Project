@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IEnemyNPC : IStats
+    public interface IEnemyNPC : IStats
     {
         int EnemyID { get; set; }
         String EnemyName { get; set; }
