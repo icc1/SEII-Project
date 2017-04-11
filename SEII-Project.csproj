@@ -98,6 +98,10 @@
     <Compile Include="Assets\Scripts\InfoManagers\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Location\Location.cs" />
     <Compile Include="Assets\Scripts\ManageGame.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Scripts\Money\MoneySystem.cs" />
+>>>>>>> refs/remotes/origin/master
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SaveGame.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
