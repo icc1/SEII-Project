@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.Combat
 {
@@ -31,15 +32,17 @@ namespace Assets.Scripts.Combat
         private CombatStates currentState;
         private IEnemyNPCGroup enemyGroup;
         private IPlayer player;
+        private Text battleLog;
         public ButtonManager buttonManager;
 
         void Start()
         {
             currentState = CombatStates.START;
-            PlayerStats tmpStats = (PlayerStats)GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerStats));
+            PlayerScript tmpStats = (PlayerScript)GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerScript));
             player = tmpStats.getStats();
             enemyGroup = EnemyInfo.generateEnemyGroup(Location.Type.DUNGEON1);
-
+            battleLog = (Text)GameObject.FindGameObjectWithTag("BattleLog").GetComponent(typeof(Text));
+            battleLog.text = "Battle Started!";
             buttonManager = GetComponent<ButtonManager>();
         }
         
@@ -58,7 +61,10 @@ namespace Assets.Scripts.Combat
                     }
                     break;
                 case (CombatStates.PLAYERCHOICE):
-                    processPlayerMoves();
+                    for(int i = 0; i < 4; i++)
+                    {
+                        processPlayerMoves(i);
+                    }
                     break;
                 case (CombatStates.ENEMYCHOICE):
                     processEnemyMoves();
@@ -71,13 +77,14 @@ namespace Assets.Scripts.Combat
                     break;
             }
         }
-        void processPlayerMoves()
+        void processPlayerMoves(int playerPartyMember)
         {
             if(buttonManager.getSelected() != PlayerChoice.NONE)
             {
                 switch(buttonManager.getSelected())
                 {
                     case (PlayerChoice.ATTACK):
+                        printToBattleLog("Click an enemy to attack...");
                         Debug.Log("Player Attacks");
                         //attack
                         break;
@@ -95,6 +102,10 @@ namespace Assets.Scripts.Combat
                         break;
                 }
             }
+        }
+        void processPlayerAttack()
+        {
+
         }
         void processEnemyMoves()
         {
@@ -137,6 +148,10 @@ namespace Assets.Scripts.Combat
             {
                 return false;
             }
+        }
+        private void printToBattleLog(String newLine)
+        {
+            battleLog.text = battleLog.text + "\n" + newLine;
         }
     }
 }
