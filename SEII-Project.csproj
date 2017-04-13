@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.2f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -88,15 +90,30 @@
     <Compile Include="Assets\Scripts\Combat\Player.cs" />
     <Compile Include="Assets\Scripts\Combat\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Combat\Stats.cs" />
+    <Compile Include="Assets\Scripts\GamePauseMenu.cs" />
     <Compile Include="Assets\Scripts\InfoManagers\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Location\Location.cs" />
+    <Compile Include="Assets\Scripts\ManageGame.cs" />
+    <Compile Include="Assets\Scripts\Money\MoneySystem.cs" />
+    <Compile Include="Assets\Scripts\NPCImplementations\GenericNPC.cs" />
+    <Compile Include="Assets\Scripts\NPCImplementations\NPC.cs" />
+    <Compile Include="Assets\Scripts\NPCInteraction\NPCInteractor.cs" />
+    <Compile Include="Assets\Scripts\NPCInterfaces\IGenericNPC.cs" />
+    <Compile Include="Assets\Scripts\Persistence\GameController.cs" />
+    <Compile Include="Assets\Scripts\Persistence\IPlayerState.cs" />
+    <Compile Include="Assets\Scripts\Persistence\PlayerController1.cs" />
+    <Compile Include="Assets\Scripts\Persistence\NPCControllerV2.cs" />
+    <Compile Include="Assets\Scripts\Persistence\PlayerState.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\SceneController.cs" />
+    <Compile Include="Assets\Scripts\SaveGame.cs" />
+    <Compile Include="Assets\Scripts\Persistence\SceneController2.cs" />
+    <Compile Include="Assets\Scripts\WorkInProgress\ExitGameInGame.cs" />
     <Compile Include="Assets\Scripts\WorkInProgress\SceneControllerScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Data\enemies.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
