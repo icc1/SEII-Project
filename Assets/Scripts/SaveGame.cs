@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class SaveGame : MonoBehaviour {
 
 	public Transform Character;
@@ -12,7 +11,6 @@ public class SaveGame : MonoBehaviour {
 	{
 		PlayerPrefs.SetFloat ("x", Character.position.x);
 		PlayerPrefs.SetFloat ("y", Character.position.y);
-        
 
 		if (quit) {
 			Time.timeScale = 1;
