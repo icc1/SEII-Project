@@ -14,10 +14,14 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastMove;
 
     private static bool playerExists;
+    public bool canMove;
 
 	// Use this for initialization
 	void Start ()
     {
+
+        if (!canMove)
+            return;
 
         animate = GetComponent<Animator>();
         playerRigidBody = GetComponent<Rigidbody2D>();
