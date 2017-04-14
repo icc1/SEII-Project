@@ -11,5 +11,6 @@ namespace Assets.Scripts.Combat_Interfaces
         String EnemyName { get; set; }
         Location.Type EnemySpawnLocation { get; set; }
         String EnemySprite { get; set; }
+        bool IsDefending { get; set; }
     }
 }

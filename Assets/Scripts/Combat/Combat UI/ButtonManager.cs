@@ -43,14 +43,20 @@ namespace Assets.Scripts.Combat.Combat_UI
             }
         }
 
-        public Combat.PlayerChoice getSelected()
+        //had to use traditional setters and getters here for compatibility with the unity gameObject inspector.
+        public Combat.PlayerChoice getSelectedButton()
         {
             return selectedButton;
         }
 
-        public void setSelected(int selected)
+        public void setSelectedButton(int selected)
         {
             selectedButton = (Combat.PlayerChoice)selected;
+        }
+
+        public int getSelectedEnemy()
+        {
+            return 0;
         }
     }
 }

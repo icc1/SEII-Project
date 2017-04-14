@@ -10,5 +10,6 @@ namespace Assets.Scripts.Combat_Interfaces
         int getNumberOfEnemies();
         IEnemyNPC getEnemy(int enemyNo);
         void addEnemy(IEnemyNPC newEnemy);
+        void removeEnemy(int enemyNo);
     }
 }

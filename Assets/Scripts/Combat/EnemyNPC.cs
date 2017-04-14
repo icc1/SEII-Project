@@ -13,7 +13,7 @@ namespace Assets.Scripts
         private String enemyName;
         private String enemySprite;
         private Location.Type enemySpawnLocation;
-        
+        private bool isDefending;
 
         public EnemyNPC(int enemyID, String enemyName, String enemySprite, Location.Type enemySpawnLocation,
             int enemyAttack, int enemyHealth, int enemyDefense, int enemySpeed)
@@ -74,6 +74,16 @@ namespace Assets.Scripts
                 enemySprite = value;
             }
         }
-
+        public bool IsDefending
+        {
+            set
+            {
+                isDefending = value;
+            }
+            get
+            {
+                return isDefending;
+            }
+        }
     }
 }

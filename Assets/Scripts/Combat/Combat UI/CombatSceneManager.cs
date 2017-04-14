@@ -12,5 +12,12 @@ namespace Assets.Scripts.Combat.Combat_UI
         Sprite enemySprite1;
         Sprite enemySprite2;
         Sprite enemySprite3;
+
+        void Start()
+        {
+            
+        }
+
+
     }
 }

@@ -33,7 +33,10 @@ namespace Assets.Scripts.Combat
         private IEnemyNPCGroup enemyGroup;
         private IPlayer player;
         private Text battleLog;
+        private System.Random combatRand;
+
         public ButtonManager buttonManager;
+
 
         void Start()
         {
@@ -77,49 +80,77 @@ namespace Assets.Scripts.Combat
                     break;
             }
         }
+
         void processPlayerMoves(int playerPartyMember)
         {
-            if(buttonManager.getSelected() != PlayerChoice.NONE)
+            if(buttonManager.getSelectedButton() != PlayerChoice.NONE)
             {
-                switch(buttonManager.getSelected())
+                switch(buttonManager.getSelectedButton())
                 {
                     case (PlayerChoice.ATTACK):
                         printToBattleLog("Click an enemy to attack...");
-                        Debug.Log("Player Attacks");
-                        //attack
+                        int selectedEnemyIndex = buttonManager.getSelectedEnemy();
+                        IEnemyNPC selectedEnemy = enemyGroup.getEnemy(selectedEnemyIndex);
+                        int damage = getDamage(player.Attack, selectedEnemy.IsDefending, selectedEnemy.Defense);//this line has player reference, needs to be generalized to player or npc companions
+                        selectedEnemy.Health -= damage;
+                        printDamage(selectedEnemy.EnemyName, damage);
+                        if (selectedEnemy.Health <= 0)
+                        {
+                            kill(selectedEnemyIndex);
+                            enemyGroup.removeEnemy(selectedEnemyIndex);
+                            checkIfWin();
+                        }
+                        else
+                        {
+                            currentState = CombatStates.ENEMYCHOICE;
+                        }
                         break;
                     case (PlayerChoice.DEFEND):
                         Debug.Log("Player Defends");
                         //defend
                         break;
                     case (PlayerChoice.RUN):
-                        Debug.Log("Player Runs");
-                        //try to run
+                        if (playerIsFaster())
+                        {
+                            printToBattleLog("You ran away successfully!");
+                            //exit battle
+                        }
+                        else
+                        {
+                            printToBattleLog("You wasted your turn trying to run away from a faster enemy!");
+                            currentState = CombatStates.ENEMYCHOICE;
+                        }
                         break;
                     case (PlayerChoice.INVENTORY):
                         Debug.Log("Player Opens Inventory");
                         //load inv
                         break;
                 }
+                buttonManager.setSelectedButton((int)PlayerChoice.NONE);
             }
         }
-        void processPlayerAttack()
+
+        private void processPlayerAttack()
         {
 
         }
-        void processEnemyMoves()
+
+        private void processEnemyMoves()
         {
             Debug.Log("Enemy Turn");
         }
-        void processWin()
+
+        private void processWin()
         {
             Debug.Log("Win!");
         }
-        void processLose()
+
+        private void processLose()
         {
             Debug.Log("Lose!");
         }
-        bool playerIsFaster()
+
+        private bool playerIsFaster()
         {
             int fastestEnemy = 0;
             int fastestTeammate = 0;
@@ -149,9 +180,64 @@ namespace Assets.Scripts.Combat
                 return false;
             }
         }
+
         private void printToBattleLog(String newLine)
         {
             battleLog.text = battleLog.text + "\n" + newLine;
+        }
+
+        private void printDamage(String target, int damage)
+        {
+            if(damage < 0)
+            {
+                printToBattleLog(target + " took no damage...");
+            }
+            else
+            {
+                printToBattleLog(target + " took " + damage + " points of damage!");
+            }
+        }
+
+        private void checkIfWin()
+        {
+            if(enemyGroup.getNumberOfEnemies() == 0)
+            {
+                currentState = CombatStates.WIN;
+            }
+        }
+
+        private void killEnemy(int enemyIndex)
+        {
+
+        }
+
+        private int getDamage(int baseDamage, bool isDefending, int targetDefense)
+        {
+            int finalDamage = baseDamage;
+            int roll = combatRand.Next(1, 21);
+            if(roll == 20)
+            {
+                finalDamage = baseDamage * 2;
+                printToBattleLog("Critical hit!");
+            }
+            else if(roll < 5)
+            {
+                finalDamage = baseDamage / 2;
+                printToBattleLog("Near miss!");
+            }
+            if (isDefending)
+            {
+                finalDamage -= targetDefense;
+                printToBattleLog("The target was defending and took less damage...");
+            }
+            if(finalDamage < 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return finalDamage;
+            }
         }
     }
 }

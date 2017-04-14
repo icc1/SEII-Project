@@ -10,7 +10,6 @@ namespace Assets.Scripts.Combat
     class Player : Stats, IPlayer
     {
         Location.Type currentLocation;
-        
 
         public Player()
         {
