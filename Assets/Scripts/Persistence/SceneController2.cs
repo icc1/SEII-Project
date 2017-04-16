@@ -26,8 +26,8 @@ public class SceneController2: MonoBehaviour {
 
             //Instantiate(NPC, new Vector3(-1.871F, 0.985F), Quaternion.identity);
         }
-        GameController.Instance.playerState.Attack += 5;
-        Debug.Log("Player Attack = " + GameController.Instance.playerState.Attack);
+        //GameController.Instance.playerState.Attack += 5;
+        //Debug.Log("Player Attack = " + GameController.Instance.playerState.Attack);
     }
     void onTriggerEnter2D(Collider2D collider)
     {
@@ -45,7 +45,7 @@ public class SceneController2: MonoBehaviour {
         {
         SceneManager.UnloadSceneAsync("main");
         SceneManager.LoadScene("Scenes/Town", LoadSceneMode.Additive);
-        GameController.Instance.playerState.Attack += 5;
-        Debug.Log("Player Attack = " + GameController.Instance.playerState.Attack);
+       // GameController.Instance.playerState.Attack += 5;
+        //Debug.Log("Player Attack = " + GameController.Instance.playerState.Attack);
     }
     }

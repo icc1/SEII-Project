@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Scripts
-{
     public class Location
     {
         public enum Type
@@ -33,4 +31,3 @@ namespace Assets.Scripts
             }
         }
     }
-}

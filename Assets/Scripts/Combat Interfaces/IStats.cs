@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IStats
+    public interface IStats
     {
         int Attack { set; get; }
         int Health { set; get; }

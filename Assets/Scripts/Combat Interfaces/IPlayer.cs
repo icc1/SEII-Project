@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IPlayer : IStats
+    public interface IPlayer : IStats
     {
         Location.Type CurrentLocation { get; set; }
     }

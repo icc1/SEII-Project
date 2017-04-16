@@ -1,49 +1,76 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Combat_Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using UnityEngine;
-using Assets.Scripts.Combat_Interfaces;
-using Assets.Scripts.Persistence;
-[RequireComponent(typeof(IStats))]
-public class NPC : MonoBehaviour {
-   // private GameController gameController;
+using Assets.Scripts.Combat;
+using Assets.Scripts.NPCInterfaces;
 
-    private bool inRange;
-	// Use this for initialization
-	void Start () {
-       // gameController = GameController.Instance();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    void OnMouseUp()
-    {
-        Debug.Log("Mouse Up'd");
-        //display Canvas for this NPC when InRange = true.
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-      //  collision.gameObject.GetComponent<typeof(IStats)>
-        Debug.Log("OnCollisionEnter");
-        //set Variable to true for when clicking on the NPC
 
-        Debug.Log("Player Attack is currently" + GameController.Instance.playerState.Attack);
-        GameController.Instance.playerState.Attack += 5;
-        Debug.Log("Player Attack is  now" + GameController.Instance.playerState.Attack);
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        string tagName = collision.gameObject.tag;
-        Debug.Log("OnCollisionExit" + tagName);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("OnTriggerEnter2D");
+public class Npc : Stats, INpc
+{
+    private String npcName;
+    private String npcSprite;
+    private Location.Type npcSpawnLocation;
+    private int defaultSpriteNumber;
 
-    }
-    private void OnTriggerExit2D(Collider2D other)
+
+    public Npc(String NPCName, String NPCSprite, int spriteNumber, Location.Type NPCSpawnLocation,
+        int NPCAttack, int NPCHealth, int NPCDefense, int NPCSpeed)
     {
-        Debug.Log("OnTriggerExit2D");
+        this.NPCName = NPCName;
+        this.NPCSprite = NPCSprite;
+        this.NPCSpawnLocation = NPCSpawnLocation;
+        this.DefaultSpriteNumber = spriteNumber;
+        this.setStats(NPCAttack, NPCHealth, NPCDefense, NPCSpeed);
+    }
+    public String NPCName
+    {
+        get
+        {
+            return npcName;
+        }
+
+        set
+        {
+            npcName = value;
+        }
+    }
+    public Location.Type NPCSpawnLocation
+    {
+        get
+        {
+            return npcSpawnLocation;
+        }
+
+        set
+        {
+            npcSpawnLocation = value;
+        }
+    }
+    public String NPCSprite
+    {
+        get
+        {
+            return npcSprite;
+        }
+
+        set
+        {
+            npcSprite = value;
+        }
+    }
+    public int DefaultSpriteNumber
+    {
+        get
+        {
+            return defaultSpriteNumber;
+
+        }
+        set
+        {
+            defaultSpriteNumber = value;
+        }
     }
 }

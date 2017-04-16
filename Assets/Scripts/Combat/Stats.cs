@@ -5,9 +5,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.Scripts
-{
-    abstract class Stats : IStats
+    public abstract class Stats : IStats
     {
         private int attack;
         private int health;
@@ -67,4 +65,3 @@ namespace Assets.Scripts
             this.Speed = newSpeed;
         }
     }
-}

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.Text;
+using Assets.Scripts.Combat;
+using Assets.Scripts.Combat_Interfaces;
 
 namespace Assets.Scripts.Persistence
 {
@@ -10,9 +12,9 @@ namespace Assets.Scripts.Persistence
 
     public class GameController: MonoBehaviour
     {
-        public static GameController Instance;
+        public static GameController Instance; 
         public List<GameObject> NPCS;
-        public IPlayerState playerState;
+        public IPlayer player;
         public List<GameObject> KeyNPCS;
         public GameController gameController()
         {
@@ -36,7 +38,8 @@ namespace Assets.Scripts.Persistence
                 Instance = this;
                 NPCS = new List<GameObject>();
                 KeyNPCS = new List<GameObject>();
-                playerState = new PlayerState();
+                player = new Player();
+
             }
             else if (Instance != this)
             {
@@ -45,10 +48,7 @@ namespace Assets.Scripts.Persistence
         }
         private void Start()
         {
-           // NPCS = new List<GameObject>();
-           // KeyNPCS = new List<GameObject>();
-          //  playerState = new PlayerState();
-          //  TestMethod();
+
         }
         public void TestMethod()
         {
