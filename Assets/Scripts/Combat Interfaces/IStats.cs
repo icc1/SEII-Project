@@ -11,6 +11,8 @@ namespace Assets.Scripts.Combat_Interfaces
         int Health { set; get; }
         int Defense { set; get; }
         int Speed { set; get; }
-
+        int MaxHealth { set; get; }
+        String Name { set; get; }
+        bool IsDefending { set; get; }
     }
 }

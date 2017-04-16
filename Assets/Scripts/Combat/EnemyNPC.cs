@@ -10,16 +10,14 @@ namespace Assets.Scripts
     class EnemyNPC : Stats, IEnemyNPC
     {
         private int enemyID;
-        private String enemyName;
         private String enemySprite;
         private Location.Type enemySpawnLocation;
-        private bool isDefending;
 
         public EnemyNPC(int enemyID, String enemyName, String enemySprite, Location.Type enemySpawnLocation,
             int enemyAttack, int enemyHealth, int enemyDefense, int enemySpeed)
         {
             this.enemyID = enemyID;
-            this.enemyName = enemyName;
+            this.Name = enemyName;
             this.enemySprite = enemySprite;
             this.enemySpawnLocation = enemySpawnLocation;
             setStats(enemyAttack, enemyHealth, enemyDefense, enemySpeed);
@@ -37,19 +35,7 @@ namespace Assets.Scripts
                 enemyID = value;
             }
         }
-
-        public String EnemyName
-        {
-            get
-            {
-                return enemyName;
-            }
-
-            set
-            {
-                enemyName = value;
-            }
-        }
+        
         public Location.Type EnemySpawnLocation
         {
             get
@@ -74,16 +60,6 @@ namespace Assets.Scripts
                 enemySprite = value;
             }
         }
-        public bool IsDefending
-        {
-            set
-            {
-                isDefending = value;
-            }
-            get
-            {
-                return isDefending;
-            }
-        }
+        
     }
 }

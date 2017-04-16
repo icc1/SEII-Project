@@ -9,10 +9,13 @@ namespace Assets.Scripts
 {
     abstract class Stats : IStats
     {
+        private String name;
         private int attack;
+        private int maxHealth;
         private int health;
         private int defense;
         private int speed;
+        private bool isDefending;
 
         public int Attack
         {
@@ -58,13 +61,48 @@ namespace Assets.Scripts
                 speed = value;
             }
         }
+        public int MaxHealth
+        {
+            get
+            {
+                return maxHealth;
+            }
+            set
+            {
+                maxHealth = value;
+            }
+        }
+        public String Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
 
         public void setStats(int newAttack, int newHealth, int newDefense, int newSpeed)
         {
             this.Attack = newAttack;
+            this.MaxHealth = newHealth;
             this.Health = newHealth;
             this.Defense = newDefense;
             this.Speed = newSpeed;
+        }
+
+        public bool IsDefending
+        {
+            set
+            {
+                isDefending = value;
+            }
+            get
+            {
+                return isDefending;
+            }
         }
     }
 }
