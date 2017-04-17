@@ -7,6 +7,8 @@ public class QuestManager : MonoBehaviour {
     public QuestObject[] quests;
     public bool[] questCompleted;
 
+    public TextBoxManager textManage;
+
 	// Use this for initialization
 	void Start () {
         questCompleted = new bool[quests.Length];	
@@ -19,6 +21,10 @@ public class QuestManager : MonoBehaviour {
 
     public void DisplayQuestText(string text)
     {
+        textManage.textLines = new string[1];
+        textManage.textLines[0] = text;
 
+        textManage.currentLine = 0;
+        textManage.EnableTextBox();
     }
 }
