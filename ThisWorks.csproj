@@ -95,6 +95,8 @@
     <Compile Include="Assets\Scripts\Combat\Player.cs" />
     <Compile Include="Assets\Scripts\Combat\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Combat\Stats.cs" />
+    <Compile Include="Assets\Scripts\DialogueHolder.cs" />
+    <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\GamePauseMenu.cs" />
     <Compile Include="Assets\Scripts\InfoManagers\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Location\Location.cs" />
