@@ -4,30 +4,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject targetToFollow;
-    private Vector3 targetPosition;
-    public float moveSpeed;
-    private static bool cameraExists;
+    public GameObject player;
+    private float zoom = -3;
 
 	// Use this for initialization
 	void Start () {
-        if (!cameraExists)
-        {
-            cameraExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zoom);
     }
 
     // Update is called once per frame
     void Update () {
-
-        targetPosition = new Vector3(targetToFollow.transform.position.x, targetToFollow.transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-	}
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, zoom);
+    }
 }
