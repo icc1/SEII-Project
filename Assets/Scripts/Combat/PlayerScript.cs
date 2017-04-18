@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Combat
 {
-    class PlayerStats : MonoBehaviour
+    class PlayerScript : MonoBehaviour
     {
         IPlayer player;
         void Start()

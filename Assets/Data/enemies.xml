@@ -17,6 +17,6 @@
 		<enemyAttack>3</enemyAttack>
 		<enemyHealth>1</enemyHealth>
 		<enemyDefense>0</enemyDefense>
-		<enemySpeed>5</enemySpeed>
+		<enemySpeed>6</enemySpeed>
 	</Enemy>
 </Enemies>
