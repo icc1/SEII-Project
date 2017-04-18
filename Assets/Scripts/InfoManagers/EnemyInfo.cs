@@ -11,7 +11,7 @@ namespace Assets.Scripts.InfoManagers
 {
     class EnemyInfo : MonoBehaviour
     {
-        private static ArrayList enemyList = new ArrayList();
+        private static List<IEnemyNPC> enemyList = new List<IEnemyNPC>();
         private String xmlDocName = "/Data/enemies.xml";
 
         public static IEnemyNPC findEnemy(int spawnRoll)
@@ -42,7 +42,7 @@ namespace Assets.Scripts.InfoManagers
 
             for(int i = 0; i < enemyID.Count; i++)
             {
-                Debug.Log(enemyID[i].InnerText);
+                Debug.Log(int.Parse(enemySpeed[i].InnerText));
                 IEnemyNPC tmpEnemy = new EnemyNPC(int.Parse(enemyID[i].InnerText), enemyName[i].InnerText, 
                     enemySprite[i].InnerText, (Location.Type)int.Parse(enemySpawnLocation[i].InnerText),
                     int.Parse(enemyAttack[i].InnerText), int.Parse(enemyHealth[i].InnerText), 
@@ -58,7 +58,7 @@ namespace Assets.Scripts.InfoManagers
 
             if (playerLocation > Location.Type.TOWN)
             {
-                int numberOfEnemies = enemyNoRand.Next(1, Location.getMaxEnemies(playerLocation));
+                int numberOfEnemies = enemyNoRand.Next(1, Location.getMaxEnemies(playerLocation)+1);
                 for (int i = 0; i < numberOfEnemies; i++)
                 {
                     newGroup.addEnemy(generateEnemy(playerLocation));
@@ -80,11 +80,12 @@ namespace Assets.Scripts.InfoManagers
 
             if (playerLocation == Location.Type.DUNGEON1)
             {
-                enemySelector = selectorRand.Next(dungeon1BaseID, dungeon1BaseID + dungeon1EnemyTypes - 1);
+                enemySelector = selectorRand.Next(dungeon1BaseID, dungeon1BaseID + dungeon1EnemyTypes);
                 return EnemyInfo.findEnemy(enemySelector);
             }
             else
             {
+                Debug.Log("Null");
                 return null;
             }
         }

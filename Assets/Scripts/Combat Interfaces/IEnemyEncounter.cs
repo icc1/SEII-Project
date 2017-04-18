@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Combat_Interfaces
 {
-    interface IEnemyEncounter
+    public interface IEnemyEncounter
     {
         //bool enemyEncountered();
         //IEnemyGroup generateEnemyGroup(Location.Type playerLocation);

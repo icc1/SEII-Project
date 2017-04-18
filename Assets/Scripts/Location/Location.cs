@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    class Location
+    public class Location
     {
         public enum Type
         {
