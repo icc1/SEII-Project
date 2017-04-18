@@ -72,7 +72,11 @@ public class TextBoxManager : MonoBehaviour {
     //Method to make the text box visible
     public void EnableTextBox()
     {
+<<<<<<< HEAD
         player.canMove = false;
+=======
+        player.playerMoving = false;
+>>>>>>> refs/remotes/origin/JakobBranch
 
         isActive = true;
         textBox.SetActive(true);
@@ -84,7 +88,11 @@ public class TextBoxManager : MonoBehaviour {
         textBox.SetActive(false);
         isActive = false;
 
+<<<<<<< HEAD
         player.canMove = true;
+=======
+        player.playerMoving = true;
+>>>>>>> refs/remotes/origin/JakobBranch
     }
 
     //Method to load in a new text file

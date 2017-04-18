@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
 
 
-    private bool playerMoving;
+    public bool playerMoving;
     private Animator animate;
     private Rigidbody2D playerRigidBody;
     private Vector2 lastMove;
@@ -70,7 +70,5 @@ public class PlayerController : MonoBehaviour
         animate.SetBool("PlayerMoving", playerMoving);
         animate.SetFloat("LastMoveX", lastMove.x);
         animate.SetFloat("LastMoveY", lastMove.y);
-
-  
     }
 }
